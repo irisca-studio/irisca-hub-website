@@ -1,205 +1,394 @@
+"use client";
+
+import { useState } from "react";
+import ParticlesBackground from "./ParticlesBackground";
+
 export default function Home() {
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const gallery = [
+    { title: "Anime Character Artwork", image: "/k1.jpg" },
+    { title: "Fantasy Character Design", image: "/k2.jpg" },
+    { title: "Animation Artwork", image: "/k3.mp4.webp" },
+    { title: "Digital Illustration", image: "/k4.webp" },
+    { title: "Character Painting", image: "/k5.jpg" },
+    { title: "Fantasy World Art", image: "/k6.jpg.png" },
+    { title: "Original Character", image: "/k7.jpg" },
+    { title: "Concept Artwork", image: "/k8.png" },
+    { title: "Commission Artwork", image: "/k9.jpg" },
+    { title: "Latest Creation", image: "/k10.jpg" },
+  ];
+
+
   return (
-    <main className="min-h-screen bg-black text-white">
+
+    <main className="min-h-screen bg-black text-white overflow-hidden relative">
+
+
+      <ParticlesBackground />
+
 
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-5 border-b border-red-900 bg-black/60 backdrop-blur-xl">
 
-        <div className="flex items-center gap-3">
+      <nav className="
+      sticky top-0 z-50
+      flex justify-between items-center
+      px-8 py-4
+      bg-black/70
+      backdrop-blur-xl
+      border-b border-red-900
+      ">
+
+
+        <div className="flex items-center gap-4">
+
+
           <img
-            src="/logo.png"
-            alt="Irisca Studio Logo"
-            className="w-12 h-12 object-contain"
+          src="/logo.png"
+          alt="Irisca Hub"
+          className="w-14 h-14 object-contain"
           />
 
-          <h2 className="text-2xl font-bold text-red-600">
-            Irisca Studio
-          </h2>
+
+          <h1 className="
+          text-3xl font-bold
+          text-red-500
+          ">
+            Irisca Hub
+          </h1>
+
+
         </div>
 
 
-        <div className="hidden md:flex gap-6 text-gray-300">
 
-          <a href="#" className="hover:text-red-600">
-            Home
-          </a>
+        <div className="flex gap-6">
 
-          <a href="#gallery" className="hover:text-red-600">
+          <a href="#gallery"
+          className="hover:text-red-500 transition">
             Gallery
           </a>
 
-          <a href="#about" className="hover:text-red-600">
-            About
+
+          <a href="#contact"
+          className="hover:text-red-500 transition">
+            Contact
           </a>
 
-          <a
-            href="https://discord.com/users/1519366936041885757"
-            target="_blank"
-            className="hover:text-red-600"
-          >
-            Discord
-          </a>
-
-          <a
-            href="https://irisca_hub.artstation.com"
-            target="_blank"
-            className="hover:text-red-600"
-          >
-            ArtStation
-          </a>
-
-          <a
-            href="https://bsky.app/profile/iriscacatto.bsky.social"
-            target="_blank"
-            className="hover:text-red-600"
-          >
-            Bluesky
-          </a>
 
         </div>
+
 
       </nav>
 
 
-      {/* Hero Section */}
+
+
+
+      {/* Hero */}
+
+
+      <section className="
+      min-h-[85vh]
+      flex flex-col
+      justify-center
+      items-center
+      text-center
+      px-6
+      ">
+
+
+        <h2 className="
+        text-6xl
+        font-black
+        ">
+
+          Welcome To
+
+          <span className="
+          text-red-500
+          ml-3
+          ">
+            Irisca Hub
+          </span>
+
+        </h2>
+
+
+
+        <p className="
+        max-w-3xl
+        mt-8
+        text-gray-400
+        text-lg
+        ">
+
+          Digital artist creating anime characters,
+          fantasy illustrations, Vtuber models and
+          unique artworks with passion and creativity.
+
+        </p>
+
+
+
+
+        <div className="flex gap-5 mt-10">
+
+
+          <a
+          href="https://irisca_hub.artstation.com"
+          target="_blank"
+          className="
+          px-6 py-3
+          bg-red-600
+          rounded-full
+          hover:scale-110
+          transition
+          ">
+            ArtStation
+          </a>
+
+
+
+          <a
+          href="https://bsky.app/profile/iriscacatto.bsky.social"
+          target="_blank"
+          className="
+          px-6 py-3
+          border border-red-500
+          rounded-full
+          hover:bg-red-600
+          transition
+          ">
+            Bluesky
+          </a>
+
+
+
+        </div>
+
+
+      </section>
+
+
+
+
+
+
+
+      {/* Gallery */}
+
+
       <section
-                className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
+      id="gallery"
+      className="px-8 py-20"
+      >
 
-  {/* Red Glow Background */}
-  <div className="absolute h-[500px] w-[500px] rounded-full bg-red-600/20 blur-[180px]" />
 
-  <img
-    src="/logo.png"
-    alt="Irisca Studio Logo"
-    className="relative z-10 mb-8 w-36 transition-transform duration-500 hover:scale-110"
-  />
+        <h2 className="
+        text-5xl
+        font-bold
+        text-center
+        mb-14
+        ">
 
-  <h1 className="relative z-10 animate-pulse text-4xl font-extrabold text-red-600 sm:text-5xl md:text-8xl">
-    Irisca Studio
-  </h1>
+          My
 
-  <p className="relative z-10 mt-6 max-w-3xl px-4 text-base leading-7 text-gray-300 md:text-lg">
-    Professional Anime Artist creating high-quality character illustrations,
-    wallpapers, VTuber art, fan art and original artwork with a cinematic style.
-  </p>
+          <span className="text-red-500">
+            Gallery
+          </span>
 
-  <div className="relative z-10 mt-10 flex flex-wrap justify-center gap-5">
+        </h2>
 
-    <a
-      href="#gallery"
-      className="rounded-xl bg-red-600 px-8 py-4 font-bold transition-all duration-300 hover:scale-105 hover:bg-red-700"
-    >
-      View Gallery
-    </a>
 
-    <a
-      href="#about"
-      className="rounded-xl border border-red-600 px-8 py-4 font-bold transition-all duration-300 hover:bg-red-600"
-    >
-      About Me
-    </a>
 
-  </div>
 
-</section>
-{/* About Section */}
-<section id="about" className="px-6 py-20">
+        <div className="
+        grid
+        md:grid-cols-3
+        gap-10
+        ">
 
-  <div className="mx-auto max-w-4xl rounded-3xl border border-red-900 bg-white/5 p-10 backdrop-blur-xl">
 
-    <h2 className="text-center text-5xl font-extrabold text-red-600">
-      About The Artist
-    </h2>
+        {gallery.map((art,index)=>(
 
-    <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-gray-300">
-      I'm an anime and digital artist creating character illustrations,
-      wallpapers, VTuber art, and original artwork. I focus on detailed
-      designs, expressive characters, and cinematic visuals to bring
-      creative ideas to life.
-    </p>
 
-  </div>
+          <div
+          key={index}
+          className="
+          bg-zinc-950
+          border border-red-900
+          rounded-3xl
+          overflow-hidden
+          group
+          hover:scale-105
+          transition duration-500
+          ">
 
-</section>
 
-      {/* Gallery Section */}
+            <img
 
-<section id="gallery" className="px-6 py-20">
+            src={art.image}
 
-  <h2 className="text-center text-5xl font-extrabold text-red-600">
-  About The Artist
-</h2>
+            alt={art.title}
 
-  <p className="mt-3 text-center text-gray-400">
-    A collection of my latest artworks and illustrations.
-  </p>
+            onClick={() =>
+              setSelectedImage(art.image)
+            }
 
-  <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+            className="
+            w-full
+            h-80
+            object-cover
+            cursor-pointer
+            group-hover:scale-110
+            transition duration-700
+            "
 
-    <img
-      src="/k1.jpg"
-      alt="Artwork 1"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
+            />
 
-    <img
-      src="/k2.jpg"
-      alt="Artwork 2"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
 
-    <img
-      src="/k3.mp4.webp"
-      alt="Artwork 3"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
 
-    <img
-      src="/k4.webp"
-      alt="Artwork 4"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
+            <div className="p-5">
 
-    <img
-      src="/k5.jpg"
-      alt="Artwork 5"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
 
-    <img
-      src="/k6.jpg.png"
-      alt="Artwork 6"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
+              <h3 className="
+              text-xl
+              font-bold
+              ">
+                {art.title}
+              </h3>
 
-    <img
-      src="/k7.jpg"
-      alt="Artwork 7"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
 
-    <img
-      src="/k8.png"
-      alt="Artwork 8"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
 
-    <img
-      src="/k9.jpg"
-      alt="Artwork 9"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
+              <p className="
+              text-gray-400
+              mt-2
+              ">
+                Digital artwork by Irisca
+              </p>
 
-    <img
-      src="/k10.jpg"
-      alt="Artwork 10"
-      className="rounded-2xl cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(220,38,38,0.6)]"
-    />
 
-   </div>
+            </div>
 
-</section>
+
+          </div>
+
+
+        ))}
+
+
+        </div>
+
+
+
+
+
+        {/* Image Preview */}
+
+
+        {selectedImage && (
+
+          <div
+          onClick={() => setSelectedImage(null)}
+
+          className="
+          fixed
+          inset-0
+          z-50
+          bg-black/90
+          flex
+          items-center
+          justify-center
+          p-5
+          "
+          >
+
+
+
+            <button
+
+            onClick={() => setSelectedImage(null)}
+
+            className="
+            absolute
+            top-8
+            right-8
+            text-white
+            text-4xl
+            hover:text-red-500
+            "
+            >
+
+              ×
+
+            </button>
+
+
+
+
+            <img
+
+            src={selectedImage}
+
+            alt="Preview"
+
+            className="
+            max-h-[90vh]
+            max-w-[90vw]
+            rounded-2xl
+            shadow-[0_0_40px_red]
+            object-contain
+            "
+
+            />
+
+
+          </div>
+
+        )}
+
+
+      </section>
+
+
+
+
+
+
+      {/* Contact */}
+
+
+      <section
+      id="contact"
+      className="
+      py-20
+      text-center
+      "
+      >
+
+
+        <h2 className="text-4xl font-bold">
+          Contact Me
+        </h2>
+
+
+
+        <p className="
+        text-gray-400
+        mt-5
+        ">
+          Available for commissions and collaborations.
+        </p>
+
+
+      </section>
+
+
 
     </main>
+
   );
+
 }

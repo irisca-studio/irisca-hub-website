@@ -1,49 +1,35 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Irisca Studio | Anime Artist & Digital Illustrator",
+  title: "Irisca Hub | Anime Artist & Digital Illustrator",
 
   description:
-    "Professional Anime Artist creating original characters, VTuber art, wallpapers, fan art, illustrations and commission artwork.",
+    "Welcome to Irisca Hub. Professional anime artist creating original characters, VTuber models, fantasy illustrations, wallpapers and commission artwork.",
 
   verification: {
     google: "wVQWA9w9vbOipgKpoSCEwWtrERfv7sZhoioiU9VVz3c",
   },
 
   keywords: [
-    "Irisca Studio",
+    "Irisca Hub",
     "Anime Artist",
     "Digital Artist",
     "Anime Illustration",
     "VTuber Artist",
     "Character Design",
-    "Wallpaper Artist",
+    "Fantasy Art",
     "Commission Artist",
     "Fan Art",
   ],
 
-  authors: [{ name: "Irisca Studio" }],
+  authors: [{ name: "Irisca Hub" }],
 
-  creator: "Irisca Studio",
+  creator: "Irisca Hub",
 
   openGraph: {
-    title: "Irisca Studio",
+    title: "Irisca Hub | Anime Artist & Digital Illustrator",
     description:
-      "Professional Anime Artist creating illustrations, wallpapers and original artwork.",
-    url: "https://irisca-studio.vercel.app",
-    siteName: "Irisca Studio",
+      "Professional anime artist creating illustrations, VTuber models, wallpapers and original artwork.",
+    url: "https://irisca-hub-website.vercel.app",
+    siteName: "Irisca Hub",
     images: [
       {
         url: "/logo.png",
@@ -57,25 +43,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Irisca Studio",
+    title: "Irisca Hub | Anime Artist & Digital Illustrator",
     description:
-      "Professional Anime Artist creating illustrations and commission artwork.",
+      "Professional anime artist creating illustrations and commission artwork.",
     images: ["/logo.png"],
   },
 };
-
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
-}

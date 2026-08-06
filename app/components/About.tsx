@@ -98,7 +98,7 @@ export default function About() {
 
           <h2
             className="
-            text-6xl
+            text-4xl sm:text-5xl lg:text-6xl
             font-bold
             mb-8
             bg-gradient-to-r
@@ -117,7 +117,7 @@ export default function About() {
           <p
             className="
             text-gray-300
-            text-xl
+            text-base sm:text-lg lg:text-xl
             leading-relaxed
             mb-6
             "
@@ -132,7 +132,7 @@ export default function About() {
           <p
             className="
             text-gray-400
-            text-lg
+            text-base sm:text-lg
             leading-relaxed
             mb-6
             "

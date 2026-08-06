@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export default function Navbar() {
   return (
     <nav className="relative w-full bg-black/90 backdrop-blur-md text-white overflow-hidden">
@@ -21,16 +19,20 @@ export default function Navbar() {
       >
 
         {/* Logo */}
-        <Link
-          href="/"
+
+        <a
+          href="#home"
           className="text-2xl font-bold tracking-wide"
         >
           Irisca
           <span className="text-purple-400"> Studio</span>
-        </Link>
+        </a>
+
+
 
 
         {/* Navigation */}
+
         <div
           className="
           hidden
@@ -42,47 +44,56 @@ export default function Navbar() {
           "
         >
 
-          <Link
-            href="/"
+          <a
+            href="#home"
             className="hover:text-red-500 transition"
           >
             Home
-          </Link>
+          </a>
 
-          <Link
-            href="/about"
+
+          <a
+            href="#about"
             className="hover:text-red-500 transition"
           >
             About
-          </Link>
+          </a>
 
-          <Link
-            href="/gallery"
+
+          <a
+            href="#gallery"
             className="hover:text-red-500 transition"
           >
             Gallery
-          </Link>
+          </a>
 
-          <Link
-            href="/services"
+
+          <a
+            href="#services"
             className="hover:text-red-500 transition"
           >
             Services
-          </Link>
+          </a>
 
-          <Link
-            href="/contact"
+
+          <a
+            href="#contact"
             className="hover:text-red-500 transition"
           >
             Contact
-          </Link>
+          </a>
+
 
         </div>
 
 
+
+
+
         {/* Get Quote Button */}
-        <Link
-          href="/contact"
+
+        <a
+          href="#commission"
           className="
           hidden
           md:flex
@@ -101,10 +112,14 @@ export default function Navbar() {
           "
         >
           GET A QUOTE
-        </Link>
+        </a>
+
+
+
 
 
         {/* Center Purple Circle */}
+
         <div
           className="
           absolute
@@ -119,14 +134,16 @@ export default function Navbar() {
           border-purple-500
           shadow-[0_0_30px_rgba(168,85,247,0.8)]
           "
-        >
-        </div>
-
+        />
 
       </div>
 
 
+
+
+
       {/* Red + Purple Bottom Design */}
+
       <div
         className="
         absolute
@@ -141,7 +158,6 @@ export default function Navbar() {
         rotate-[-2deg]
         "
       />
-
 
     </nav>
   );

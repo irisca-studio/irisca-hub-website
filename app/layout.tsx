@@ -1,66 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Irisca Hub | Anime Artist & Digital Illustrator",
+  metadataBase: new URL("https://irisca-hub-website.vercel.app"),
 
-  description:
-    "Welcome to Irisca Hub. Professional anime artist creating original characters, VTuber models, fantasy illustrations, wallpapers and commission artwork.",
-
-  verification: {
-    google: "wVQWA9w9vbOipgKpoSCEwWtrERfv7sZhoioiU9VVz3c",
+  title: {
+    default: "Irisca Studio | Digital Artist & Character Designer",
+    template: "%s | Irisca Studio",
   },
 
+  description:
+    "Irisca Studio creates unique characters, Vtuber models, digital art, and custom illustrations.",
+
   keywords: [
-    "Irisca Hub",
-    "Anime Artist",
+    "Irisca Studio",
     "Digital Artist",
-    "Anime Illustration",
-    "VTuber Artist",
     "Character Design",
-    "Fantasy Art",
-    "Commission Artist",
-    "Fan Art",
+    "Vtuber Model",
+    "Digital Art",
+    "Commission Art",
   ],
 
-  authors: [{ name: "Irisca Hub" }],
-
-  creator: "Irisca Hub",
-
   openGraph: {
-    title: "Irisca Hub | Anime Artist & Digital Illustrator",
+    title: "Irisca Studio",
     description:
-      "Professional anime artist creating illustrations, VTuber models, wallpapers and original artwork.",
+      "Creating characters, Vtuber models and digital artwork.",
     url: "https://irisca-hub-website.vercel.app",
-    siteName: "Irisca Hub",
+    siteName: "Irisca Studio",
     images: [
       {
         url: "/logo.png",
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 800,
       },
     ],
     locale: "en_US",
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Irisca Hub | Anime Artist & Digital Illustrator",
-    description:
-      "Professional anime artist creating illustrations and commission artwork.",
-    images: ["/logo.png"],
   },
 };
 
@@ -70,11 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

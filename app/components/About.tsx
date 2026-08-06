@@ -60,11 +60,7 @@ export default function About() {
 
 
         {/* IMAGE */}
-        <div className="
-        flex
-        justify-center
-        "
-        >
+        <div className="flex justify-center">
 
           <div
             className="
@@ -167,8 +163,15 @@ export default function About() {
           <div className="flex gap-5 flex-wrap">
 
 
-            <a
-              href="/gallery"
+            <button
+              onClick={() =>
+                document
+                  .getElementById("gallery")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  })
+              }
               className="
               px-10
               py-4
@@ -184,13 +187,14 @@ export default function About() {
               "
             >
               View Gallery
-            </a>
+            </button>
 
 
 
             <a
               href="https://iriscaworld1.artstation.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="
               px-10
               py-4

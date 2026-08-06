@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
@@ -14,6 +15,9 @@ import CoupleGallery from "./components/CoupleGallery";
 export default function Home() {
   return (
     <main className="w-full overflow-x-hidden">
+      
+<Navbar />
+
 
       <Hero />
 

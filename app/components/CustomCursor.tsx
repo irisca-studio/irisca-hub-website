@@ -2,60 +2,119 @@
 
 import { useEffect, useState } from "react";
 
-export default function CustomCursor(){
+export default function CustomCursor() {
 
-const [pos,setPos]=useState({
-x:0,
-y:0
-});
+  const [mounted, setMounted] = useState(false);
 
-
-useEffect(()=>{
-
-const move=(e:MouseEvent)=>{
-
-setPos({
-x:e.clientX,
-y:e.clientY
-});
-
-};
+  const [mouse, setMouse] = useState({
+    x: -100,
+    y: -100,
+  });
 
 
-window.addEventListener("mousemove",move);
+  useEffect(() => {
+
+    setMounted(true);
 
 
-return()=>window.removeEventListener("mousemove",move);
+    const move = (e: MouseEvent) => {
+
+      setMouse({
+        x: e.clientX,
+        y: e.clientY,
+      });
+
+    };
 
 
-},[]);
+    window.addEventListener(
+      "mousemove",
+      move
+    );
+
+
+    return () => {
+      window.removeEventListener(
+        "mousemove",
+        move
+      );
+    };
+
+
+  }, []);
 
 
 
-return(
+  if (!mounted) return null;
 
-<div
-style={{
-left:pos.x,
-top:pos.y,
-}}
-className="
-fixed
-pointer-events-none
-z-[9999]
-w-6
-h-6
-rounded-full
-bg-gradient-to-r
-from-purple-500
-to-red-500
-shadow-[0_0_25px_rgba(168,85,247,1)]
-animate-pulse
--translate-x-1/2
--translate-y-1/2
-"
-/>
 
-);
 
+  return (
+
+    <div
+      className="
+      fixed
+      left-0
+      top-0
+      z-[999999]
+      pointer-events-none
+      "
+      style={{
+        transform: `translate(${mouse.x}px, ${mouse.y}px)`,
+      }}
+    >
+
+      <svg
+        width="30"
+        height="40"
+        viewBox="0 0 30 40"
+        fill="none"
+      >
+
+        <defs>
+
+          <linearGradient
+            id="cursorColor"
+            x1="0"
+            y1="0"
+            x2="30"
+            y2="40"
+          >
+
+            <stop
+              stopColor="#a855f7"
+            />
+
+            <stop
+              offset="1"
+              stopColor="#ef4444"
+            />
+
+          </linearGradient>
+
+        </defs>
+
+
+        <path
+          d="
+          M3 2
+          L3 30
+          L10 23
+          L16 37
+          L22 34
+          L16 20
+          L27 20
+          Z
+          "
+          fill="url(#cursorColor)"
+          stroke="white"
+          strokeWidth="2"
+        />
+
+      </svg>
+
+
+    </div>
+
+  );
 }

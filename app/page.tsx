@@ -12,7 +12,7 @@ import ChibiArt from "./components/ChibiArt";
 import CustomCursor from "./components/CustomCursor";
 import CommissionPolicy from "./components/CommissionPolicy";
 import SocialLinks from "./components/SocialLinks";
-
+import ProcessShowcase from "./components/ProcessShowcase";
 export default function Home() {
   return (
     <main>
@@ -31,16 +31,18 @@ export default function Home() {
 
       <Process />
 
+      <ProcessShowcase />
+
       <HowItWorks />
 
       <ChibiArt />
 
       <CustomCursor />
-      <CommissionPolicy />
 
-    
+      <CommissionPolicy />
       
       <Contact />
+
       <SocialLinks />
 
       

@@ -48,7 +48,7 @@ export default function About() {
         max-w-7xl
         w-full
         mx-auto
-        px-8
+        px-4 sm:px-6 lg:px-8
         grid
         lg:grid-cols-2
         gap-16
@@ -64,8 +64,10 @@ export default function About() {
 
           <div
             className="
-            w-[420px]
-            h-[520px]
+            w-full
+            max-w-[420px]
+            h-[400px]
+            md:h-[520px]
             rounded-[40px]
             overflow-hidden
             border

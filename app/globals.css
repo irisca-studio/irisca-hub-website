@@ -629,3 +629,12 @@ font-size:15px;
 .animate-fade {
   animation: fade 0.8s ease;
 }
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}

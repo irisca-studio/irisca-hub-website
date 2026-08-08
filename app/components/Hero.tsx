@@ -16,13 +16,24 @@ export default function Hero() {
       <div className="relative mb-10">
         <div className="absolute inset-0 rounded-full bg-purple-600 blur-3xl opacity-50 animate-pulse"></div>
 
-        <Image
-          src="/logo.png"
-          alt="Irisca Studio Logo"
-          width={200}
-          height={200}
-          className="relative rounded-full border-4 border-purple-500 shadow-[0_0_50px_rgba(168,85,247,0.6)] hover:scale-105 transition duration-500"
-        />
+        <img
+  src="/logo.png"
+  alt="Irisca Studio Logo"
+  className="
+    relative
+    w-[200px]
+    h-[200px]
+    object-contain
+    rounded-full
+    border-4
+    border-purple-500
+    shadow-[0_0_50px_rgba(168,85,247,0.6)]
+    hover:scale-105
+    transition
+    duration-500
+  "
+/>
+        
       </div>
 
 

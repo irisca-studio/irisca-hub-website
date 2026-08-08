@@ -2,18 +2,7 @@
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="
-      relative
-      min-h-screen
-      flex
-      items-center
-      bg-black
-      overflow-hidden
-      py-20
-      "
-    >
+    <section className="relative w-full min-h-screen bg-[#050505] py-24 overflow-hidden">
 
       {/* Background Glow */}
       <div
@@ -42,7 +31,6 @@ export default function About() {
         "
       />
 
-
       <div
         className="
         max-w-7xl
@@ -58,7 +46,6 @@ export default function About() {
         "
       >
 
-
         {/* IMAGE */}
         <div className="flex justify-center">
 
@@ -73,7 +60,32 @@ export default function About() {
             border
             border-purple-500/40
             shadow-[0_0_80px_rgba(168,85,247,0.35)]
+            cursor-pointer
             "
+            onClick={() => {
+              const image = document.createElement("img");
+
+              image.src = "/k10.jpg";
+              image.alt = "Irisca Digital Artist";
+
+              Object.assign(image.style, {
+                position: "fixed",
+                inset: "0",
+                width: "100vw",
+                height: "100vh",
+                objectFit: "contain",
+                background: "rgba(0,0,0,0.95)",
+                zIndex: "99999",
+                padding: "30px",
+                cursor: "zoom-out",
+              });
+
+              image.onclick = () => {
+                image.remove();
+              };
+
+              document.body.appendChild(image);
+            }}
           >
 
             <img
@@ -91,10 +103,8 @@ export default function About() {
         </div>
 
 
-
         {/* CONTENT */}
         <div>
-
 
           <h2
             className="
@@ -113,7 +123,6 @@ export default function About() {
           </h2>
 
 
-
           <p
             className="
             text-gray-300
@@ -126,7 +135,6 @@ export default function About() {
             anime artwork, character design, illustrations,
             VTuber models, and creative visual storytelling.
           </p>
-
 
 
           <p
@@ -144,7 +152,6 @@ export default function About() {
           </p>
 
 
-
           <p
             className="
             text-gray-400
@@ -160,10 +167,8 @@ export default function About() {
           </p>
 
 
-
           {/* BUTTONS */}
           <div className="flex gap-5 flex-wrap">
-
 
             <button
               onClick={() =>
@@ -192,7 +197,6 @@ export default function About() {
             </button>
 
 
-
             <a
               href="https://iriscaworld1.artstation.com/"
               target="_blank"
@@ -214,15 +218,11 @@ export default function About() {
               ArtStation
             </a>
 
-
           </div>
-
 
         </div>
 
-
       </div>
-
 
     </section>
   );

@@ -1,49 +1,62 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Gallery from "./components/Gallery";
 import Services from "./components/Services";
-import Contact from "./components/Contact";
 import Process from "./components/Process";
-import HowItWorks from "./components/HowItWorks";
-import ChibiArt from "./components/ChibiArt";
-import CustomCursor from "./components/CustomCursor";
-import CommissionPolicy from "./components/CommissionPolicy";
-import SocialLinks from "./components/SocialLinks";
 import ProcessShowcase from "./components/ProcessShowcase";
 import CoupleGallery from "./components/CoupleGallery";
+import HowItWorks from "./components/HowItWorks";
+import ChibiArt from "./components/ChibiArt";
+import CommissionPolicy from "./components/CommissionPolicy";
+import Contact from "./components/Contact";
+import SocialLinks from "./components/SocialLinks";
+import CustomCursor from "./components/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden">
-      
-<Navbar />
+    <main className="min-h-screen bg-black overflow-x-hidden">
+      {/* Navbar */}
+      <Navbar />
 
-
+      {/* Hero */}
       <Hero />
 
+      {/* About */}
       <About />
 
+      {/* Gallery */}
+      <Gallery />
+
+      {/* Services */}
       <Services />
 
+      {/* Process */}
       <Process />
 
+      {/* Process Showcase */}
       <ProcessShowcase />
 
-      {/* Couple Animation Column */}
+      {/* Couple Gallery */}
       <CoupleGallery />
 
+      {/* How It Works */}
       <HowItWorks />
 
+      {/* Chibi Art */}
       <ChibiArt />
 
-      <CustomCursor />
-
+      {/* Commission Policy */}
       <CommissionPolicy />
 
+      {/* Contact */}
       <Contact />
 
+      {/* Social Links */}
       <SocialLinks />
 
+      {/* Custom Cursor */}
+      <CustomCursor />
     </main>
   );
 }

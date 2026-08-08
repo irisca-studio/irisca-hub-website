@@ -14,32 +14,24 @@ const artworks = [
   "/k9.jpg",
   "/k10.jpg",
   "/image.png",
+  "/KD-4-26086.png",
+  "/Kd-17-43155 1 1 (1).mp4",
+  "/render (1).mp4",
 ];
+
 export default function Gallery() {
   const [current, setCurrent] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
 
-  /* ============================= */
-  /* NEXT IMAGE                    */
-  /* ============================= */
-
   const nextImage = () => {
     setCurrent((old) => (old + 1) % artworks.length);
   };
-
-  /* ============================= */
-  /* PREVIOUS IMAGE                */
-  /* ============================= */
 
   const prevImage = () => {
     setCurrent((old) =>
       old === 0 ? artworks.length - 1 : old - 1
     );
   };
-
-  /* ============================= */
-  /* AUTO SLIDER                   */
-  /* ============================= */
 
   useEffect(() => {
     if (fullscreen) return;
@@ -50,10 +42,6 @@ export default function Gallery() {
 
     return () => clearInterval(slide);
   }, [fullscreen]);
-
-  /* ============================= */
-  /* ESC TO CLOSE                  */
-  /* ============================= */
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -79,10 +67,6 @@ export default function Gallery() {
     };
   }, [fullscreen]);
 
-  /* ============================= */
-  /* BODY SCROLL LOCK              */
-  /* ============================= */
-
   useEffect(() => {
     if (fullscreen) {
       document.body.style.overflow = "hidden";
@@ -94,6 +78,9 @@ export default function Gallery() {
       document.body.style.overflow = "";
     };
   }, [fullscreen]);
+
+  const currentFile = artworks[current];
+  const isVideo = currentFile.toLowerCase().endsWith(".mp4");
 
   return (
     <>
@@ -197,9 +184,7 @@ export default function Gallery() {
             Explore my latest artworks and digital creations.
           </p>
 
-          {/* ========================================= */}
-          {/* ART FRAME                                */}
-          {/* ========================================= */}
+          {/* ART FRAME */}
 
           <div
             className="
@@ -284,26 +269,45 @@ export default function Gallery() {
               ›
             </button>
 
-            {/* ===================================== */}
-            {/* MAIN ARTWORK                           */}
-            {/* ===================================== */}
+            {/* MAIN ARTWORK */}
 
-            <img
-              key={artworks[current]}
-              src={artworks[current]}
-              alt={`Artwork ${current + 1}`}
-              draggable={false}
-              onClick={() => setFullscreen(true)}
-              className="
-              w-full
-              h-full
-              object-contain
-              cursor-zoom-in
-              select-none
-              transition-opacity
-              duration-500
-              "
-            />
+            {isVideo ? (
+              <video
+                key={currentFile}
+                src={currentFile}
+                autoPlay
+                loop
+                muted
+                playsInline
+                onClick={() => setFullscreen(true)}
+                className="
+                w-full
+                h-full
+                object-contain
+                cursor-zoom-in
+                select-none
+                transition-opacity
+                duration-500
+                "
+              />
+            ) : (
+              <img
+                key={currentFile}
+                src={currentFile}
+                alt={`Artwork ${current + 1}`}
+                draggable={false}
+                onClick={() => setFullscreen(true)}
+                className="
+                w-full
+                h-full
+                object-contain
+                cursor-zoom-in
+                select-none
+                transition-opacity
+                duration-500
+                "
+              />
+            )}
 
             {/* CLICK HINT */}
 
@@ -331,9 +335,7 @@ export default function Gallery() {
 
           </div>
 
-          {/* ========================================= */}
-          {/* DOTS                                     */}
-          {/* ========================================= */}
+          {/* DOTS */}
 
           <div
             className="
@@ -372,9 +374,7 @@ export default function Gallery() {
 
       </section>
 
-      {/* ========================================= */}
-      {/* FULLSCREEN VIEWER                         */}
-      {/* ========================================= */}
+      {/* FULLSCREEN VIEWER */}
 
       {fullscreen && (
         <div
@@ -457,25 +457,48 @@ export default function Gallery() {
             ‹
           </button>
 
-          {/* FULLSCREEN IMAGE */}
+          {/* FULLSCREEN ARTWORK */}
 
-          <img
-            src={artworks[current]}
-            alt={`Artwork ${current + 1} fullscreen`}
-            draggable={false}
-            onClick={(event) => event.stopPropagation()}
-            className="
-            max-w-full
-            max-h-full
-            w-auto
-            h-auto
-            object-contain
-            rounded-xl
-            sm:rounded-2xl
-            shadow-[0_0_100px_rgba(168,85,247,0.35)]
-            select-none
-            "
-          />
+          {isVideo ? (
+            <video
+              src={currentFile}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              onClick={(event) => event.stopPropagation()}
+              className="
+              max-w-full
+              max-h-full
+              w-auto
+              h-auto
+              object-contain
+              rounded-xl
+              sm:rounded-2xl
+              shadow-[0_0_100px_rgba(168,85,247,0.35)]
+              select-none
+              "
+            />
+          ) : (
+            <img
+              src={currentFile}
+              alt={`Artwork ${current + 1} fullscreen`}
+              draggable={false}
+              onClick={(event) => event.stopPropagation()}
+              className="
+              max-w-full
+              max-h-full
+              w-auto
+              h-auto
+              object-contain
+              rounded-xl
+              sm:rounded-2xl
+              shadow-[0_0_100px_rgba(168,85,247,0.35)]
+              select-none
+              "
+            />
+          )}
 
           {/* FULLSCREEN RIGHT */}
 

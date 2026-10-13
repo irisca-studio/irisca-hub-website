@@ -25,7 +25,7 @@ export default function Navbar() {
           className="text-2xl font-bold tracking-wide"
         >
           Irisca
-          <span className="text-purple-400"> Studio</span>
+          <span className="text-purple-400"> hub</span>
         </a>
 
 

@@ -12,7 +12,7 @@ import CommissionPolicy from "./components/CommissionPolicy";
 import Contact from "./components/Contact";
 import SocialLinks from "./components/SocialLinks";
 import CustomCursor from "./components/CustomCursor";
-
+import WallpaperShowcase from "./components/WallpaperShowcase";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black overflow-x-hidden">
@@ -39,6 +39,8 @@ export default function Home() {
 
       {/* Couple Gallery */}
       <CoupleGallery />
+
+     <WallpaperShowcase />
 
       {/* How It Works */}
       <HowItWorks />

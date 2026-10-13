@@ -114,7 +114,7 @@ export default function ProcessShowcase() {
               "
             >
               <video
-                src="/kkkk.mp4"
+                src="/KD-8-35037 Render (1).mp4"
                 autoPlay
                 loop
                 muted
@@ -269,7 +269,7 @@ export default function ProcessShowcase() {
           {/* FULLSCREEN VIDEO */}
 
           <video
-            src="/kkkk.mp4"
+            src="/KD-8-35037 Render (1).mp4"
             autoPlay
             loop
             muted

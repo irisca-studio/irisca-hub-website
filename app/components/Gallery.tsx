@@ -14,9 +14,10 @@ const artworks = [
   "/k9.jpg",
   "/k10.jpg",
   "/image.png",
-  "/KD-4-26086.png",
-  "/Kd-17-43155 1 1 (1).mp4",
-  "/render (1).mp4",
+   "/11 (1).mp4",
+  "/GoSL4qMXQAA2oSy (1).webp",
+  "/render-1.mp4",
+  "/k3.mp4",
 ];
 
 export default function Gallery() {
